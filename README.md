@@ -244,3 +244,77 @@ function updateScores() {
 
 With this, every time a player wins a game, their score will be increased by one and the new scores will be displayed. The scores will persist across games until the page is refreshed. If you want to be able to reset the scores without refreshing the page, you can add a button to do that and a corresponding function in your Javascript.
 
+**Prompt: can you make it pretty, with colors and nice fonts**
+Absolutely, CSS is used for this exact purpose. Here's an example of how you could style the game:
+
+```css
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #333;
+}
+
+h3 {
+  color: #777;
+}
+
+#tic-tac-toe-board {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  border: 3px solid #333;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2em;
+  background-color: #fff;
+}
+
+.cell::before {
+  content: "";
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #777;
+}
+```
+
+In this CSS, I've changed the background color of the whole page to a light grey (#f4f4f4) and centered the game board both vertically and horizontally. I've also increased the size of the cells and added some styling to the reset button.
+
+I've used a simple sans-serif font (Arial), but you can use any font you like. If you want to use a custom font, you can import it from a service like Google Fonts.
+
+Keep in mind that the colors, sizes and fonts used here are just examples, you should adjust them to suit your preferences.
+
+As of my knowledge cutoff in September 2021, there are also libraries like Bootstrap or Material-UI that can help you style your page in an easier way with pre-built components. They can also help ensure that your game looks good on different devices and screen sizes.
