@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
     <h1>Tic Tac Toe</h1>
+    <h3 id="scores">X: 0 - O: 0</h3>
     <div id="tic-tac-toe-board">
-        <div class="row">
-            <div class="cell" onclick="makeMove(0, 0)"></div>
-            <div class="cell" onclick="makeMove(0, 1)"></div>
-            <div class="cell" onclick="makeMove(0, 2)"></div>
-        </div>
-        <div class="row">
-            <div class="cell" onclick="makeMove(1, 0)"></div>
-            <div class="cell" onclick="makeMove(1, 1)"></div>
-            <div class="cell" onclick="makeMove(1, 2)"></div>
-        </div>
-        <div class="row">
-            <div class="cell" onclick="makeMove(2, 0)"></div>
-            <div class="cell" onclick="makeMove(2, 1)"></div>
-            <div class="cell" onclick="makeMove(2, 2)"></div>
-        </div>
+      <div class="row">
+        <div class="cell" onclick="makeMove(0, 0)"></div>
+        <div class="cell" onclick="makeMove(0, 1)"></div>
+        <div class="cell" onclick="makeMove(0, 2)"></div>
+      </div>
+      <div class="row">
+        <div class="cell" onclick="makeMove(1, 0)"></div>
+        <div class="cell" onclick="makeMove(1, 1)"></div>
+        <div class="cell" onclick="makeMove(1, 2)"></div>
+      </div>
+      <div class="row">
+        <div class="cell" onclick="makeMove(2, 0)"></div>
+        <div class="cell" onclick="makeMove(2, 1)"></div>
+        <div class="cell" onclick="makeMove(2, 2)"></div>
+      </div>
     </div>
     <button onclick="resetBoard()">Reset</button>
     <script src="tictactoe.js"></script>
-</body>
+  </body>
 </html>
