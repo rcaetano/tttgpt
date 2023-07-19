@@ -394,3 +394,78 @@ button:hover {
 In this stylesheet, I've used various colors to create a rainbow theme. The `transition` property added to the `.cell` and `button` classes will make the color change smoothly when these elements are hovered over.
 
 Please note that the colors used are just examples. Feel free to modify them to get the exact look you want.
+
+**Prompt: I would like to publish my scores and save them on Amazon s3. write the code**
+To publish scores and save them on Amazon S3, you will need to use Amazon's AWS SDK.
+
+Here is a basic example of how you can achieve this:
+
+1. Include the AWS SDK in your HTML:
+
+```html
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+```
+
+2. Set up your AWS credentials (you should never hardcode your credentials in real application, this is just an example):
+
+```javascript
+AWS.config.update({
+  region: "us-west-2",
+  accessKeyId: "yourAccessKeyId",
+  secretAccessKey: "yourSecretAccessKey",
+});
+```
+
+3. Initialize S3 service interface:
+
+```javascript
+let s3 = new AWS.S3();
+```
+
+4. Define a function that writes the scores to a file and uploads it to S3:
+
+```javascript
+function uploadScores() {
+  let scores = {
+    x: scoreX,
+    o: scoreO,
+  };
+
+  let params = {
+    Bucket: "your-bucket-name",
+    Key: "scores.json",
+    Body: JSON.stringify(scores),
+    ContentType: "application/json",
+  };
+
+  s3.upload(params, function (err, data) {
+    if (err) {
+      console.log("Error", err);
+    }
+    if (data) {
+      console.log("Upload Success", data.Location);
+    }
+  });
+}
+```
+
+5. Call `uploadScores` function every time a game is won and scores are updated:
+
+```javascript
+if (checkWinner()) {
+  // update and display scores
+  if (currentPlayer === "X") {
+    scoreX++;
+  } else {
+    scoreO++;
+  }
+  updateScores();
+  uploadScores(); // Upload scores to S3
+  alert(currentPlayer + " is the winner!");
+  return;
+}
+```
+
+Please replace `'yourAccessKeyId'`, `'yourSecretAccessKey'`, and `'your-bucket-name'` with your actual AWS access key ID, secret access key, and the name of your S3 bucket.
+
+Also, please be aware that you should never hardcode your credentials in a real application, as it's insecure. For the purposes of a real application, you should
