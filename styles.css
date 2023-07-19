@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #3498DB;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,11 +14,13 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 h3 {
-    color: #777;
+    color: #F1C40F;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 #tic-tac-toe-board {
@@ -32,7 +34,7 @@ h3 {
 }
 
 .cell {
-    border: 3px solid #333;
+    border: 3px solid #F39C12;
     width: 100px;
     height: 100px;
     display: flex;
@@ -40,22 +42,25 @@ h3 {
     justify-content: center;
     cursor: pointer;
     font-size: 2em;
-    background-color: #fff;
+    background-color: #2ECC71;
+    color: #E74C3C;
+    transition: background-color 0.3s ease;
 }
 
-.cell::before {
-    content: "";
+.cell:hover {
+    background-color: #1ABC9C;
 }
 
 button {
     padding: 10px 20px;
     border: none;
-    background-color: #333;
-    color: #fff;
+    background-color: #9B59B6;
+    color: #FFFFFF;
     font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #777;
+    background-color: #8E44AD;
 }

@@ -318,3 +318,79 @@ I've used a simple sans-serif font (Arial), but you can use any font you like. I
 Keep in mind that the colors, sizes and fonts used here are just examples, you should adjust them to suit your preferences.
 
 As of my knowledge cutoff in September 2021, there are also libraries like Bootstrap or Material-UI that can help you style your page in an easier way with pre-built components. They can also help ensure that your game looks good on different devices and screen sizes.
+
+**Prompt: give it a rainbow theme**
+Sure, here's an example of a rainbow-themed CSS:
+
+```css
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #3498db;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #ffffff;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  color: #f1c40f;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#tic-tac-toe-board {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  border: 3px solid #f39c12;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2em;
+  background-color: #2ecc71;
+  color: #e74c3c;
+  transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #1abc9c;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #9b59b6;
+  color: #ffffff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #8e44ad;
+}
+```
+
+In this stylesheet, I've used various colors to create a rainbow theme. The `transition` property added to the `.cell` and `button` classes will make the color change smoothly when these elements are hovered over.
+
+Please note that the colors used are just examples. Feel free to modify them to get the exact look you want.
